@@ -1,6 +1,8 @@
 const room = window.location.pathname.replaceAll("/", "");
 const socket = io(`http://localhost:3000/${room}`);
 
+document.getElementById("title").innerHTML = `<h1>${room}</h1>`;
+
 let user = null;
 
 socket.on("update_messages", (messages) => {
